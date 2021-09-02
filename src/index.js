@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Axios from 'axios'
+
+let url = 'http://localhost:8000'
+
+Axios.defaults.baseURL = url;
+Axios.defaults.headers.post['contentType'] = 'application/json';
+Axios.defaults.headers.common['Authorization'] = localStorage.getItem('JWT_PAYLOAD');
 
 ReactDOM.render(
   <React.StrictMode>
